@@ -1,20 +1,20 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@azure/functions': ^3.0.0
-  '@types/node': 16.x
+  '@azure/functions': ^3.5.0
+  '@types/node': ~16.18.11
   '@typescript-eslint/eslint-plugin': ^5.48.1
   '@typescript-eslint/parser': ^5.48.1
-  '@undp-data/geohub-cli': ^1.0.0
-  azure-functions-core-tools: ^4.x
+  '@undp-data/geohub-cli': ^1.0.1
+  azure-functions-core-tools: ^4.0.4915
   eslint: ^8.31.0
   eslint-config-prettier: ^8.6.0
   lefthook: ^1.2.7
   prettier: ^2.8.2
-  typescript: ^4.0.0
+  typescript: ^4.9.4
 
 dependencies:
-  '@undp-data/geohub-cli': 1.0.0
+  '@undp-data/geohub-cli': 1.0.1
   lefthook: 1.2.7
 
 devDependencies:
@@ -68,9 +68,9 @@ packages:
       - encoding
     dev: false
 
-  /@azure/core-lro/2.4.0:
-    resolution: {integrity: sha512-F65+rYkll1dpw3RGm8/SSiSj+/QkMeYDanzS/QKlM1dmuneVyXbO46C88V1MRHluLGdMP6qfD3vDRYALn0z0tQ==}
-    engines: {node: '>=12.0.0'}
+  /@azure/core-lro/2.5.0:
+    resolution: {integrity: sha512-Vsd5Sl04RG/p5ui/p0dAFMov5I/W4dmRjOrtWGXVs4vY/hNMPefiFH7cZEOr+1u0XrBKkpvt634IyUUD9bVRuQ==}
+    engines: {node: '>=14.0.0'}
     dependencies:
       '@azure/abort-controller': 1.1.0
       '@azure/logger': 1.0.3
@@ -121,7 +121,7 @@ packages:
     dependencies:
       '@azure/abort-controller': 1.1.0
       '@azure/core-http': 2.3.1
-      '@azure/core-lro': 2.4.0
+      '@azure/core-lro': 2.5.0
       '@azure/core-paging': 1.4.0
       '@azure/core-tracing': 1.0.0-preview.13
       '@azure/logger': 1.0.3
@@ -347,9 +347,8 @@ packages:
       eslint-visitor-keys: 3.3.0
     dev: true
 
-  /@undp-data/geohub-cli/1.0.0:
-    resolution: {integrity: sha512-mj4d+DezcEHmFBbFjdNCc0s/mSdtH6vOQzTv7IwG5llx5p9aheEdsfh+v7YrOCeveY+6rrXCRwq/4BzQu+d23Q==}
-    engines: {pnpm: ^7.0.0}
+  /@undp-data/geohub-cli/1.0.1:
+    resolution: {integrity: sha512-0w8xd9kHYdF7ydEMdr19GOWSgkkJwBcWSqeplU0DwkNGhg1xQU3UWG0fMPCGBygzTJbrfeBtUN4MlwcRatqIrg==}
     hasBin: true
     requiresBuild: true
     dependencies:
