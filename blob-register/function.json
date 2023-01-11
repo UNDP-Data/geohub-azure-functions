@@ -5,8 +5,7 @@
 			"type": "httpTrigger",
 			"direction": "in",
 			"name": "req",
-			"methods": ["get", "post"],
-			"source": "EventGrid"
+			"methods": ["get", "post"]
 		},
 		{
 			"type": "http",
