@@ -5,7 +5,7 @@ specifiers:
   '@types/node': ~16.18.11
   '@typescript-eslint/eslint-plugin': ^5.48.1
   '@typescript-eslint/parser': ^5.48.1
-  '@undp-data/geohub-cli': ^1.0.1
+  '@undp-data/geohub-cli': ^1.0.2
   azure-functions-core-tools: ^4.0.4915
   eslint: ^8.31.0
   eslint-config-prettier: ^8.6.0
@@ -14,7 +14,7 @@ specifiers:
   typescript: ^4.9.4
 
 dependencies:
-  '@undp-data/geohub-cli': 1.0.1
+  '@undp-data/geohub-cli': 1.0.2
   lefthook: 1.2.7
 
 devDependencies:
@@ -88,7 +88,7 @@ packages:
     resolution: {integrity: sha512-KxDlhXyMlh2Jhj2ykX6vNEU0Vou4nHr025KoSEiz7cS3BNiHNaZcdECk/DmLkEB0as5T7b/TpRcehJ5yV6NeXQ==}
     engines: {node: '>=12.0.0'}
     dependencies:
-      '@opentelemetry/api': 1.3.0
+      '@opentelemetry/api': 1.4.0
       tslib: 2.4.1
     dev: false
 
@@ -189,8 +189,8 @@ packages:
       fastq: 1.15.0
     dev: true
 
-  /@opentelemetry/api/1.3.0:
-    resolution: {integrity: sha512-YveTnGNsFFixTKJz09Oi4zYkiLT5af3WpZDu4aIUM7xX+2bHAkOJayFTVQd6zB8kkWPpbua4Ha6Ql00grdLlJQ==}
+  /@opentelemetry/api/1.4.0:
+    resolution: {integrity: sha512-IgMK9i3sFGNUqPMbjABm0G26g0QCKCUBfglhQ7rQq6WcxbKfEHRcmwsoER4hZcuYqJgkYn2OeuoJIv7Jsftp7g==}
     engines: {node: '>=8.0.0'}
     dev: false
 
@@ -347,8 +347,8 @@ packages:
       eslint-visitor-keys: 3.3.0
     dev: true
 
-  /@undp-data/geohub-cli/1.0.1:
-    resolution: {integrity: sha512-0w8xd9kHYdF7ydEMdr19GOWSgkkJwBcWSqeplU0DwkNGhg1xQU3UWG0fMPCGBygzTJbrfeBtUN4MlwcRatqIrg==}
+  /@undp-data/geohub-cli/1.0.2:
+    resolution: {integrity: sha512-s3aiioLRbyffAc9dFrS3ngDu82ivINmqivQ7PvqqIFJ7PqcryLtyUtyJULRwR59cymKx1EimH4ro4onaABdOiw==}
     hasBin: true
     requiresBuild: true
     dependencies:

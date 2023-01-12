@@ -13,7 +13,7 @@
 		"test": "echo \"No tests yet...\""
 	},
 	"dependencies": {
-		"@undp-data/geohub-cli": "^1.0.1",
+		"@undp-data/geohub-cli": "^1.0.2",
 		"lefthook": "^1.2.7"
 	},
 	"devDependencies": {

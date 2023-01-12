@@ -24,13 +24,19 @@ const httpTrigger: AzureFunction = async function (
 	) {
 		context.res = {
 			status: 500,
-			body: 'Please set environment variables for this function'
+			body: {
+				url,
+				message: 'Please set environment variables for this function'
+			}
 		};
 	} else {
 		if (!url) {
 			context.res = {
 				status: 400,
-				body: 'Please pass a url on the query string or in the request body'
+				body: {
+					url,
+					message: 'Please pass a url on the query string or in the request body'
+				}
 			};
 		} else {
 			const blobManager = new BlobServiceAccountManager(
@@ -40,19 +46,29 @@ const httpTrigger: AzureFunction = async function (
 			);
 
 			// scan file to register
+			const dbManager = new DatabaseManager(DATABASE_CONNECTION);
 			const res = await blobManager.scanBlob(url);
 			if (!res.dataset) {
-				throw new Error('No dataset to register');
-			}
-			const storages: Storages = new Storages([res.storage]);
-			const datasets = new Datasets([res.dataset]);
-			const dbManager = new DatabaseManager(DATABASE_CONNECTION);
-			await dbManager.register(storages, datasets);
+				await dbManager.deleteDataset(url);
+				context.res = {
+					body: {
+						url,
+						message: `The blob of '${url}' does not exist and it was deleted from the database.`
+					}
+				};
+			} else {
+				const storages: Storages = new Storages([res.storage]);
+				const datasets = new Datasets([res.dataset]);
+				await dbManager.register(storages, datasets);
 
-			context.res = {
-				// status: 200, /* Defaults to 200 */
-				body: `${url} was registered to GeoHub`
-			};
+				context.res = {
+					body: {
+						url,
+						message: `${url} was registered to GeoHub`,
+						dataset: res.dataset
+					}
+				};
+			}
 		}
 	}
 };
