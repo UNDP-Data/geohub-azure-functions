@@ -1,11 +1,6 @@
 import { AzureFunction, Context, HttpRequest } from '@azure/functions';
 
-import {
-	BlobServiceAccountManager,
-	DatabaseManager,
-	Datasets,
-	Storages
-} from '@undp-data/geohub-cli';
+import { BlobServiceAccountManager, DatabaseManager, Datasets } from '@undp-data/geohub-cli';
 
 const { AZURE_STORAGE_ACCOUNT, AZURE_STORAGE_ACCESS_KEY, DATABASE_CONNECTION, TITILER_ENDPOINT } =
 	process.env;
@@ -57,9 +52,8 @@ const httpTrigger: AzureFunction = async function (
 					}
 				};
 			} else {
-				const storages: Storages = new Storages([res.storage]);
 				const datasets = new Datasets([res.dataset]);
-				await dbManager.register(storages, datasets);
+				await dbManager.register(datasets);
 
 				context.res = {
 					body: {

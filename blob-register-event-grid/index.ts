@@ -1,11 +1,6 @@
 import { AzureFunction, Context } from '@azure/functions';
 
-import {
-	BlobServiceAccountManager,
-	DatabaseManager,
-	Datasets,
-	Storages
-} from '@undp-data/geohub-cli';
+import { BlobServiceAccountManager, DatabaseManager, Datasets } from '@undp-data/geohub-cli';
 
 const { AZURE_STORAGE_ACCOUNT, AZURE_STORAGE_ACCESS_KEY, DATABASE_CONNECTION, TITILER_ENDPOINT } =
 	process.env;
@@ -63,14 +58,9 @@ const eventGridTrigger: AzureFunction = async function (
 					context.log('No dataset to register');
 					continue;
 				}
-				const storages: Storages = new Storages([res.storage]);
-				if (storages.getStorages().length === 0) {
-					context.log('The dataset is in invalid storage. Skip to register.');
-					continue;
-				}
 				const datasets = new Datasets([res.dataset]);
 				const dbManager = new DatabaseManager(DATABASE_CONNECTION);
-				await dbManager.register(storages, datasets);
+				await dbManager.register(datasets);
 
 				context.log(`${url} was registered to GeoHub`);
 			}
